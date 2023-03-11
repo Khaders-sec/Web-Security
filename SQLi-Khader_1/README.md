@@ -5,7 +5,7 @@
 - SQL Injection in a Nutshell. => (Let's Take a Look! ><)
 
   - What is SQL Injection?
-  - What is the types of SQL Injection?
+  - What are the types of SQL Injection?
   - How to prevent SQL Injection?
 
 - SQL Injection in Action => (Let's Hack It! ^^)
@@ -31,11 +31,13 @@
 
 ---
 
-### What is SQL Injection?
+## **Part 1: Let's Take a Look! ><**
+
+### 1.1 What is SQL Injection?
 
 SQL injection is a code injection technique, used to attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker). SQL injection must exploit a security vulnerability in an application's software, for example, when user input is either incorrectly filtered for string literal escape characters embedded in SQL statements or user input is not strongly typed and unexpectedly executed. SQL injection is mostly known as an attack vector for websites but can be used to attack any type of SQL database.
 
-### What are the types of SQL Injection?
+### 1.2 What are the types of SQL Injection?
 
 - In-band SQL Injection
 - Inferential SQL Injection
@@ -45,7 +47,7 @@ SQL injection is a code injection technique, used to attack data-driven applicat
 - Boolean-based SQL Injection
 - Time-based SQL Injection
 
-### How to prevent SQL Injection?
+### 1.3 How to prevent SQL Injection?
 
 You can prevent SQL injection by using prepared statements. Prepared statements are SQL statements that are compiled and stored in the database. This means that the database can parse the statement and check its syntax before it is executed. This prevents SQL injection because the parameters are escaped before the query is executed. The following example shows how to use prepared statements to prevent SQL injection:
 
@@ -75,6 +77,18 @@ $result = $stmt->get_result();
 ```
 
 ---
+
+## **Part 2: Let's Hack It! ^^**
+
+### 2.1 Practicing with - [PortSwigger](https://portswigger.net/web-security/sql-injection) SQL Injection Labs
+
+#### 2.1.1 Manual Exploitation via manipulating the URL
+
+- [Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data](https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data)
+
+---
+
+## ** Part 3: Let's Learn More! ^\_^**
 
 ### My Resources
 
