@@ -87,7 +87,8 @@ $result = $stmt->get_result();
 #### 2.1.1 Manual Exploitation via manipulating the URL
 
 - [Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data](https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data)
-  > Actual SQL Query
+
+> Actual SQL Query
 
 ```sql
 SELECT * FROM products WHERE category = 'Gifts' AND released = 1
