@@ -61,12 +61,14 @@ Here is an example of how to use prepared statements in PHP:
 <?php
 // Create a prepared statement
 $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
-// Bind parameters to the query
-$stmt->bind_param("ss", $username, $password);
-// Set parameters and execute
+// Get parameter values
 $username = "admin";
 $password = "password";
+// Bind parameters to the query
+$stmt->bind_param("ss", $username, $password);
+// Execute the query
 $stmt->execute();
+// Get the result of the query
 $result = $stmt->get_result();
 // Do something with the result
 ?>
