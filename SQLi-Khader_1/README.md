@@ -2,7 +2,7 @@
 
 ## Agenda
 
-- SQL Injection in a Nutshell. => (Let's Take a Look! ^\_^)
+- SQL Injection in a Nutshell. => (Let's Take a Look! ><)
 
   - What is SQL Injection?
   - How does SQL Injection work?
@@ -22,7 +22,7 @@
     - PicoCTF SQL Injection
     - HackTheBox or TryHackMe Rooms
 
-- Where should I go from here? => (Let's Learn More! :D)
+- Where should I go from here? => (Let's Learn More! ^\_^)
   - More Resources
     - Useful GitHub Repositories
     - Useful Cheat Sheets
@@ -54,3 +54,5 @@ SQL injection is a code injection technique, used to attack data-driven applicat
 - [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
 - [SQL Map Docs](https://github.com/sqlmapproject/sqlmap)
 - [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/)
+
+# Made with 💚 by Khaders
