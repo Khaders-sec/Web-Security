@@ -2,11 +2,11 @@
 
 ## Agenda
 
-- SQL Injection in a Nutshell. => (Let's Take a Look! ^\_^)
+- SQL Injection in a Nutshell. => (Let's Take a Look! :D)
   - What is SQL Injection?
   - How does SQL Injection work?
   - How to prevent SQL Injection?
-- SQL Injection in Action => (Let's Hack It! :D)
+- SQL Injection in Action => (Let's Hack It! ^\_^)
   - PortSwigger SQL Injection Labs with Automation
   - MetaSpoitable 2 with Zap Proxy
     - Security Level 0 => (No Protection)
@@ -17,6 +17,16 @@
 ### Description
 
 SQL injection is a code injection technique, used to attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker). SQL injection must exploit a security vulnerability in an application's software, for example, when user input is either incorrectly filtered for string literal escape characters embedded in SQL statements or user input is not strongly typed and unexpectedly executed. SQL injection is mostly known as an attack vector for websites but can be used to attack any type of SQL database.
+
+### Types of SQL Injection
+
+- In-band SQL Injection
+- Inferential SQL Injection
+- Blind SQL Injection
+- Error-based SQL Injection
+- Union-based SQL Injection
+- Boolean-based SQL Injection
+- Time-based SQL Injection
 
 ### My Resources
 
