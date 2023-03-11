@@ -5,7 +5,7 @@
 - SQL Injection in a Nutshell. => (Let's Take a Look! ><)
 
   - What is SQL Injection?
-  - How does SQL Injection work?
+  - What is the types of SQL Injection?
   - How to prevent SQL Injection?
 
 - SQL Injection in Action => (Let's Hack It! ^^)
@@ -31,11 +31,11 @@
 
 ---
 
-### Description
+### What is SQL Injection?
 
 SQL injection is a code injection technique, used to attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker). SQL injection must exploit a security vulnerability in an application's software, for example, when user input is either incorrectly filtered for string literal escape characters embedded in SQL statements or user input is not strongly typed and unexpectedly executed. SQL injection is mostly known as an attack vector for websites but can be used to attack any type of SQL database.
 
-### Types of SQL Injection
+### What are the types of SQL Injection?
 
 - In-band SQL Injection
 - Inferential SQL Injection
@@ -44,6 +44,33 @@ SQL injection is a code injection technique, used to attack data-driven applicat
 - Union-based SQL Injection
 - Boolean-based SQL Injection
 - Time-based SQL Injection
+
+### How to prevent SQL Injection?
+
+You can prevent SQL injection by using prepared statements. Prepared statements are SQL statements that are compiled and stored in the database. This means that the database can parse the statement and check its syntax before it is executed. This prevents SQL injection because the parameters are escaped before the query is executed. The following example shows how to use prepared statements to prevent SQL injection:
+
+```sql
+SELECT * FROM users WHERE username = ? AND password = ?
+-- Here the ? is a placeholder for the username and password values that will be passed to the query.
+-- The database will escape any special chars in the values and then execute the query.
+```
+
+Here is an example of how to use prepared statements in PHP:
+
+```php
+<?php
+// Create a prepared statement
+$stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+// Bind parameters to the query
+$stmt->bind_param("ss", $username, $password);
+// Set parameters and execute
+$username = "admin";
+$password = "password";
+$stmt->execute();
+$result = $stmt->get_result();
+// Do something with the result
+?>
+```
 
 ---
 
