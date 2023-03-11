@@ -9,6 +9,7 @@
   - How to prevent SQL Injection?
 
 - SQL Injection in Action => (Let's Hack It! ^^)
+
   - Practicing with PortSwigger SQL Injection Labs
     - Manual Exploitation via manipulating the URL
     - Writing a Python Script to automate the exploitation process
@@ -19,7 +20,8 @@
     - Security Level 2 => (Advanced Protection) ==> Show the secure code
   - Solving CTF Challenges
     - PicoCTF SQL Injection
-    - HackTheBox SQL Injection
+    - HackTheBox or TryHackMe Rooms
+
 - Where should I go from here? => (Let's Learn More! :D)
   - More Resources
     - Useful GitHub Repositories
