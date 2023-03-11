@@ -8,11 +8,15 @@
   - How to prevent SQL Injection?
 - SQL Injection in Action => (Let's Hack It! ^\_^)
   - PortSwigger SQL Injection Labs with Automation
-  - MetaSpoitable 2 with Zap Proxy
-    - Security Level 0 => (No Protection)
-    - Security Level 1 => (Basic Protection)
-    - Security Level 2 => (Advanced Protection)
-  - SQL Map with PicoCTF
+    - Writing a Python Script to automate the exploitation process
+    - Using SQL Map to exploit the Vulnerability
+  - MetaSpoitable 2
+    - Security Level 0 => (No Protection) ==> Manual Exploitation
+    - Security Level 1 => (Basic Protection) ==> Bypass Frontend Validation with **Zap Proxy**
+    - Security Level 2 => (Advanced Protection) ==> Show the secure code
+  - Solving CTF Challenges
+    - PicoCTF SQL Injection
+    - HackTheBox SQL Injection
 
 ---
 
