@@ -2,21 +2,30 @@
 
 ## Agenda
 
-- SQL Injection in a Nutshell. => (Let's Take a Look! :D)
+- SQL Injection in a Nutshell. => (Let's Take a Look! ^\_^)
+
   - What is SQL Injection?
   - How does SQL Injection work?
   - How to prevent SQL Injection?
-- SQL Injection in Action => (Let's Hack It! ^\_^)
-  - PortSwigger SQL Injection Labs with Automation
+
+- SQL Injection in Action => (Let's Hack It! ^^)
+  - Practicing with PortSwigger SQL Injection Labs
+    - Manual Exploitation via manipulating the URL
     - Writing a Python Script to automate the exploitation process
     - Using SQL Map to exploit the Vulnerability
-  - MetaSpoitable 2
-    - Security Level 0 => (No Protection) ==> Manual Exploitation
+  - Exploit MetaSpoitable2 VM
+    - Security Level 0 => (No Protection) ==> - Manual Exploitation via entering the Payload in the input fields
     - Security Level 1 => (Basic Protection) ==> Bypass Frontend Validation with **Zap Proxy**
     - Security Level 2 => (Advanced Protection) ==> Show the secure code
   - Solving CTF Challenges
     - PicoCTF SQL Injection
     - HackTheBox SQL Injection
+- Where should I go from here? => (Let's Learn More! :D)
+  - More Resources
+    - Useful GitHub Repositories
+    - Useful Cheat Sheets
+    - Useful Articles
+    - Useful Videos
 
 ---
 
