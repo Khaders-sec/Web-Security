@@ -254,7 +254,7 @@ sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" -D d
 
 ---
 
-## ** Part 3: Let's Learn More! ^\_^**
+## **Part 3: Let's Learn More! ^\_^**
 
 ### My Resources
 
