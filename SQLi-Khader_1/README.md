@@ -8,14 +8,14 @@
   - What are the types of SQL Injection?
   - How to prevent SQL Injection?
 
-- SQL Injection in Action => (Let's Hack It! ^^)
+- SQL Injection in Action => (Let's Hack! ^^)
 
   - Practicing with PortSwigger SQL Injection Labs
-    - Manual Exploitation via manipulating the URL
+    - Manual Exploitation via manipulating the URL for the GET request -> Notice the URL encoding
     - Writing a Python Script to automate the exploitation process
   - Exploit MetaSpoitable2 VM
-    - Security Level 0 => (No Protection) ==> Manual Exploitation via entering the Payload in the input fields
-    - Security Level 1 => (Basic Protection) ==> Bypass Frontend Validation with **Zap Proxy**
+    - Security Level 0 => (No Protection) ==> Manual Exploitation via entering Payloads in the input fields
+    - Security Level 1 => (Basic Protection) ==> Bypass Frontend Validation with **Zap Proxy** -> Talk here about the Zap Proxy and its features compared to Burp Suite
     - Security Level 2 => (Advanced Protection) ==> Show the secure code
   - Using SQL Map to make life easier
     - Setup Docker Container with Vulnerable Web Application
@@ -242,9 +242,21 @@ sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" -D d
 
 ### 2.4 Solving CTF Challenges
 
-#### 2.4.1 PicoCTF SQL Injection
+#### 2.4.1 [PicoCTF](https://play.picoctf.org/practice/challenge/304?category=1) SQL Injection
 
-- [SQL Injection](https://picoctf.org/practice-questions)
+- SQLiLite Challenge
+
+  > Final SQL Payload... Find out the flag!
+
+  ```sql
+  admin' --
+  ```
+
+- Web Gauntlet Challenge
+  > Final SQL Payload... Be care about filters in each round!
+  ```sql
+  ' OR 1=1 --
+  ```
 
 #### 2.4.2 HackTheBox || TryHackMe Rooms
 
