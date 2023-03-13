@@ -303,6 +303,7 @@ sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookies
 >
 > > - Cloudflare and WAF Filters Bypass
 > > - HackTheBox and TryHackMe
+> > - My PenTesting Lab
 > > - Web PenTesting Roadmap and Resources
 > > - [PortSwigger Labs, Rana Khalil, PortSwigger Book]
 
