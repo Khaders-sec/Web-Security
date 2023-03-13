@@ -299,4 +299,11 @@ sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookies
 - [Union Attack](https://portswigger.net/web-security/sql-injection/union-attacks)
 - [SQL Injection Bypassing Common Filters](https://portswigger.net/support/sql-injection-bypassing-common-filters)
 
+> Notes
+>
+> > - Cloudflare and WAF Filters Bypass
+> > - HackTheBox and TryHackMe
+> > - Web PenTesting Roadmap and Resources
+> > - [PortSwigger Labs, Rana Khalil, PortSwigger Book]
+
 # Made with 💚 by Khaders
