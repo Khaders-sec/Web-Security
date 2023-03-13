@@ -247,6 +247,7 @@ sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookies
 
 #### 2.4.1 [PicoCTF](https://play.picoctf.org/practice/challenge/304?category=1) SQL Injection
 
+<!--
 - SQLiLite Challenge
 
   > Final SQL Payload... Find out the flag!
@@ -275,7 +276,7 @@ sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookies
 
   # Round 5
   ad'||'min'; -- Notice the flag in the filter link after refreshing the page
-  ```
+  ``` -->
 
 #### 2.4.2 HackTheBox || TryHackMe Rooms
 
